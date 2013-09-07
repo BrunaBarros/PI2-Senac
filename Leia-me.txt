@@ -1,0 +1,4 @@
+Autores: Bruna Barros, Clayton Menezes e Thiago Messias
+
+O trabalho se trata de um jogo chamado M.I.P. (Matemática, Inglês e Português) que ensinar-a a criança de 6 à 7 anos de idade um pouco de cada matéria trata no jogo.
+Como Objetivo principal a ideia é criar uma atração da criança para o jogo e assim fazendo com que ela jogue, se divirta e principalmente aprenda com esse jogo.

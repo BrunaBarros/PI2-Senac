@@ -1,10 +1,8 @@
 #ifdef FUNCOES
 #define FUNCOES
 
-void open_window();
-
 //Configurando teclado e mouse para funcionarem de acordo com o jogo.
-void install_keyboard();
+void open_window();
 
 //Opções iniciais para que o usuário possa fazer as configurações
 //do personagem.
