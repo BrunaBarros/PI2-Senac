@@ -1,6 +1,6 @@
 #ifdef FUNCOES
 #define FUNCOES
-
+#include "funcoes.c"
 //Configurando teclado e mouse para funcionarem de acordo com o jogo.
 void open_window();
 
@@ -8,8 +8,10 @@ void open_window();
 //do personagem.
 void first_menu();
 void options_first_menu();
-void option_sex();
-void option_name();
+void sex_male();
+void sex_famele();
+void select_name();
+void load();
 
 //Escolha da matéria que vai jogar e também o nével.
 void option_school();
