@@ -1,53 +1,50 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "funcoes.h"
-#define NAME 10
+#define TRUE 1
+#define FALSE 0
+
 int main(){
-	int sexo = 0, escola = 0, porta = 0, salve = 0; 
-	char nome[NAME];
+	int game_status = 0, option = 0, school = 0;
 
-	//Iniciando o jogo, escolhendo continuar de onde parou ou iniciar um novo jogo.
+	//Nessa função todos os recursos do jogo serão instalados, como teclado, mouse etc...
 	open_window();
-
-	first_menu(salve);
-
-	printf("\n0 - INICIAR NOVO JOGO\n1 - CONTINUAR\n2 - SAIR\n");
-	/* caso tenha o armazenamento de fases --- 
-	tentar não ultilizar o  Zero como escolha, pois não é comum em jogos e usuários não são programadores */
-	scanf("%d", &option);
 	
-	if(option == 0){
-		if(sexo == 0)
-			sex_male();
-//--------------------------------------armazenamento de nome e escolha 
-		else
-			sex_famale();
-//--------------------------------------armazenamento de nome e escolha
-		option_name();
+	//Iniciando o jogo, escolhendo continuar de onde parou ou iniciar um novo jogo.
+	printf("Menu Principal\n");
+	scanf("%d", &option);
+	switch(option){
 
-		scanf("%d", &escola);
+		case 0:
+			game_start();
+		break;
 
-// -------------- declara variavel e usa o SWITH CASE é melhor para essa quantidade de escolha, vai deixar o código mais legível 
-// -------------  deixar a ordem das escolhas no programa, na ordem do jogo em si, MIP , matemática, inglês e português
-		if(escola == 0){
+		case 1:
+			game_load();
+		break;
+
+		case 2:
+			printf("Finalizando Jogo\n");
+			return 0;
+		break;
+	}
+	//Apos a escolha entre continuar ou começar novamente o usuário estará na tela de seleção de escolas
+	printf("Selecione a escola\n");
+	scanf("%d", &school);
+	switch(school){
+		case 0:
 			open_math();
-		}
-		else if(escola == 1){
-			open_port();
-		}
+		break;
 
-		else{
+		case 1:
 			open_ing();
+		break;
 
-		}
+		case 2:
+			open_port();
+		break;
 	}
 
-	else if(option == 1){
-		menu_load();
-
-	}
-
-	else
-		close();
 
 	return 0;
 }
