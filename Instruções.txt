@@ -1,0 +1,7 @@
+Instruções
+Para executar o allegro com todas as funções funcionando é necessário instalar o teclado do usuário para que então possamos fazer iniciar o jogo.
+https://github.com/GDPLTDA/Pi6/blob/master/Testes/AllegroTeste/Allegro.c
+https://github.com/GDPLTDA/Pi6
+http://www.rafaeltoledo.net/tutoriais-allegro-5/
+https://sites.google.com/a/liesenberg.biz/cjogos/home/recursos/allegro-5
+http://www.cprogramming.com/

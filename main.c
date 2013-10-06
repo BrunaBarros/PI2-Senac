@@ -5,9 +5,9 @@
 #include <allegro5/allegro_native_dialog.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_ttf.h>
-#include "lib_funcoes.h"
+#include "funcoes.h"
 
-#include <allegro5/events.h>
+//#include <allegro5/events.h>
 #define TRUE 1
 #define FALSE 0
 
@@ -22,8 +22,7 @@
 	ALLEGRO_TIMER *timer = NULL, *tcont = 0;
 	ALLEGRO_KEYBOARD *keyboard = NULL;
 
-//---------------------------------------------------------------------------------------------------------------------------
-//int check_allegro(background, start_menu_img, sections_event, display, font_text, timer, tcont);
+
 //---------------------------------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------------------------------
 void menu_background(){
@@ -46,7 +45,7 @@ int main(){
 //---------------------------------------------------------------------------------------------------------------------------
 
 	//Variaveis internas relacionadas as bibliotecas usadas e erros do jogo em si.
-	int status_allegro = 0, tecla = 2;
+	int status_allegro = 0, tecla = 0;
 	//A variavel teclado tem 5 estados
 	/*
 	0 - Neutro
@@ -69,13 +68,10 @@ int main(){
 	display = al_create_display(SCREEN_W, SCREEN_H);
 	background = al_load_bitmap("img/background.jpg");
 	start_menu_img = al_load_bitmap("img/start_screen.jpg");
-	font_text = al_load_font("font/Acens.ttf", 50, 0);
+	font_text = al_load_font("font/font.ttf", 50, 0);
 	timer = al_create_timer(0.1);
 	tcont = al_create_timer(1.0);
 	sections_event = al_create_event_queue();
-
-	
-
 
 	al_set_window_title(display, "MIP");
 
@@ -95,7 +91,7 @@ int main(){
 		return 0;
 	}
 
-	//al_register_event_source(sections_event, al_get_key_board_event_source(keyboard));
+	al_register_event_source(sections_event, al_get_keyboard_event_source());
 	al_register_event_source(sections_event, al_get_display_event_source(display));
 
 
@@ -117,9 +113,13 @@ int main(){
 
 	al_flip_display();
 
-//	option = capture_key_event(SCREEN_H, SCREEN_W, display, sections_event, tecla, font_text);
+
 	option = capture_event_queue(SCREEN_H, SCREEN_W, keyboard, display, sections_event, tecla, font_text);
 
+	if(option == -1){
+		close_game(background, start_menu_img, sections_event, display, timer, tcont);
+		return 0;
+	}
 	switch(option){
 
 		case 0:

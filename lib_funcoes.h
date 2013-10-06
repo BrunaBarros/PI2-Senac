@@ -1,5 +1,4 @@
 #ifdef _FUNCOES_H_
-
 #define _FUNCOES_H_
 #include "funcoes.c"
 //Configurando teclado e mouse para funcionarem de acordo com o jogo.
@@ -47,15 +46,12 @@ int exp_port();
 int key_port_lv2();
 int key_port_lv3();
 
-//Allegro Functions
-//Essa função faz a checagem de todas as funções do allegro iniciadas, elá é executada somente uma vez.
-int check_allegro(ALLEGRO_BITMAP *background, ALLEGRO_BITMAP *start_menu_img, ALLEGRO_EVENT_QUEUE *sections_event, ALLEGRO_DISPLAY *display, ALLEGRO_FONT *font_text, ALLEGRO_TIMER *timer, ALLEGRO_TIMER *tcont);
 
-//Essa captura de evento ira devolver a ação feita pelo usuário.
 
+int capture_key_event(int SCREEN_H, int SCREEN_W, ALLEGRO_DISPLAY *display, ALLEGRO_EVENT_QUEUE *sections_event, int teclado, ALLEGRO_FONT *font_text);
 int capture_event_queue(int SCREEN_H, int SCREEN_W, ALLEGRO_KEYBOARD *keyboard, ALLEGRO_DISPLAY *display, ALLEGRO_EVENT_QUEUE *sections_event, int teclado, ALLEGRO_FONT *font_text);
-
-//Fecha todas as funções do allegro, consequentemente fecha o jogo.
+int check_allegro(ALLEGRO_BITMAP *background, ALLEGRO_BITMAP *start_menu_img, ALLEGRO_EVENT_QUEUE *sections_event, ALLEGRO_DISPLAY *display, ALLEGRO_FONT *font_text, ALLEGRO_TIMER *timer, ALLEGRO_TIMER *tcont);
 void close_game(ALLEGRO_BITMAP *background, ALLEGRO_BITMAP *start_menu_img, ALLEGRO_EVENT_QUEUE *sections_event, ALLEGRO_DISPLAY *display, ALLEGRO_TIMER *timer, ALLEGRO_TIMER *tcont);
+
 
 #endif
