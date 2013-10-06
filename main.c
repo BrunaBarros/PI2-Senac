@@ -73,7 +73,7 @@ int main(){
 	tcont = al_create_timer(1.0);
 	sections_event = al_create_event_queue();
 
-	al_set_window_title(display, "MIP");
+	al_set_window_title(display, "M.I.P. - Matemática, Português e Inglês");
 
 
 	al_start_timer(timer);
