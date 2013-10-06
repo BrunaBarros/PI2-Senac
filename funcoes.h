@@ -48,4 +48,10 @@ int key_port_lv3();
 
 
 
+int capture_key_event(int SCREEN_H, int SCREEN_W, ALLEGRO_DISPLAY *display, ALLEGRO_EVENT_QUEUE *sections_event, int teclado, ALLEGRO_FONT *font_text);
+int capture_event_queue(int SCREEN_H, int SCREEN_W, ALLEGRO_KEYBOARD *keyboard, ALLEGRO_DISPLAY *display, ALLEGRO_EVENT_QUEUE *sections_event, int teclado, ALLEGRO_FONT *font_text);
+int check_allegro(ALLEGRO_BITMAP *background, ALLEGRO_BITMAP *start_menu_img, ALLEGRO_EVENT_QUEUE *sections_event, ALLEGRO_DISPLAY *display, ALLEGRO_FONT *font_text, ALLEGRO_TIMER *timer, ALLEGRO_TIMER *tcont);
+void close_game(ALLEGRO_BITMAP *background, ALLEGRO_BITMAP *start_menu_img, ALLEGRO_EVENT_QUEUE *sections_event, ALLEGRO_DISPLAY *display, ALLEGRO_TIMER *timer, ALLEGRO_TIMER *tcont);
+
+
 #endif
