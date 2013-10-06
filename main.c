@@ -5,7 +5,7 @@
 #include <allegro5/allegro_native_dialog.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_ttf.h>
-#include "funcoes.h"
+#include "lib_funcoes.h"
 
 #include <allegro5/events.h>
 #define TRUE 1

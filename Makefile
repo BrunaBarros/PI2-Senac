@@ -3,19 +3,18 @@ CFLAGS = -W -Wall
 EXEC = main
 SRC= $(wildcard *.c)
 OBJ= $(SRC:.c=.o)
-LIBS=-lallegro -lallegro_audio -lallegro_acodec -lallegro_image -lallegro_font -lallegro_main -lallegro_ttf -lallegro_primitives
+LIBS=-lallegro -lallegro_image -lallegro_font -lallegro_main -lallegro_ttf -lallegro_primitives
+#-lallegro_audio -lallegro_acodec
 
 all: $(EXEC)
 
 $(EXEC): $(OBJ)
-	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+	$(CC) -o $@ $^ $(LIBS)
 
-# $< está pegando a dependência mais recente.
-%.o:%.c
-	$(CC) -c $@ -o $< $(CFLAGS)
+%.o: %.c
+	$(CC) -o $@ -c $<
 
-# .PHONY: clean
+.PHONY: clean
 
-# clean:
-# rm -rf *.o
- 	
+clean:
+	rm -rf $(OBJ) 	
