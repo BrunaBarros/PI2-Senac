@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
-#include <allegro5/allegro_native_dialog.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_ttf.h>
+#include <allegro5/allegro_native_dialog.h>
 #include "funcoes.h"
 
 //#include <allegro5/events.h>
@@ -26,14 +26,11 @@
 //---------------------------------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------------------------------
 void menu_background(){
-	al_draw_bitmap(start_menu_img, 0, 0, 0);
-	al_flip_display();
+	//al_draw_bitmap(start_menu_img, 0, 0, 0);
+	
+	//fadein(1, start_menu_img);
+	//al_flip_display();
 }
-//---------------------------------------------------------------------------------------------------------------------------
-//---------------------------------------------------------------------------------------------------------------------------
-
-void capture_event();
-
 //---------------------------------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------------------------------
 
@@ -80,6 +77,8 @@ int main(){
 	al_start_timer(tcont);
 
 	//Qualquer valor que seja colocado apos a imagem, ira interferir na sua posição em relação a tela.
+	fadeout(7, SCREEN_W, SCREEN_H, display);
+	
 	al_draw_bitmap(background, 0,0,0);
 	al_flip_display();
 
@@ -99,8 +98,9 @@ int main(){
 //---------------------------------------------------------------------------------------------------------------------------
 
 
-	menu_background();
-
+	//menu_background();
+	fadeout(1, SCREEN_W, SCREEN_H, display);
+	al_draw_bitmap(start_menu_img, 0,0,0);
 	printf("Menu Principal\n");
 
 	//capture_event();

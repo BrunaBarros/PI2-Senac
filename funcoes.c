@@ -234,3 +234,52 @@ int capture_event_queue(int SCREEN_H, int SCREEN_W, ALLEGRO_KEYBOARD *keyboard, 
 }
 //---------------------------------------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------------------------------------
+void fadeout(int velocidade, int largura, int altura, ALLEGRO_DISPLAY *display){
+	ALLEGRO_BITMAP *buffer = NULL;
+	buffer = al_create_bitmap(largura, altura);
+	al_set_target_bitmap(buffer);
+	al_draw_bitmap(al_get_backbuffer(display), 0, 0, 0);
+	al_set_target_bitmap(al_get_backbuffer(display));
+
+	if(velocidade < 0)
+		velocidade = 1;
+
+	else if( velocidade > 15)
+		velocidade = 15;
+
+	float alfa;
+	for(alfa = 0; alfa <=255; alfa += velocidade){
+		al_clear_to_color(al_map_rgb(255 - alfa, 255 - alfa, 255 - alfa));
+		//bool map_rgba = al_map_rgba( 255 - alfa, 255 - alfa, 255 - alfa, alfa);
+		//al_draw_bitmap(buffer, map_rgba, 0, 0, 0);
+		//al_draw_bitmap(buffer, al_map_rgba( 255 - alfa, 255 - alfa, 255 - alfa, alfa), 0, 0, 0);
+		al_flip_display();
+	}
+	al_destroy_bitmap(buffer);
+}
+//---------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------------------
+void fadein(int velocidade, ALLEGRO_BITMAP *imagem){
+	/*if(velocidade < 0)
+		velocidade = 1;
+
+	else if(velocidade > 15)
+		velocidade = 15;
+
+	float alfa;
+
+	for(alfa = 0; alfa <= 255; alfa += velocidade){
+		al_clear_to_color(al_map_rgb(0, 0, 0));
+		al_draw_bitmap(imagem,al_map_rgba(alfa, alfa, alfa, alfa)0, 0, 0, 0);
+		al_flip_display();
+		al_reset(0.005);
+	}
+	al_flip_display();*/
+	printf("Hello\n");
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------------------
+void timeout(){
+	
+}

@@ -58,4 +58,8 @@ int capture_event_queue(int SCREEN_H, int SCREEN_W, ALLEGRO_KEYBOARD *keyboard, 
 //Fecha todas as funções do allegro, consequentemente fecha o jogo.
 void close_game(ALLEGRO_BITMAP *background, ALLEGRO_BITMAP *start_menu_img, ALLEGRO_EVENT_QUEUE *sections_event, ALLEGRO_DISPLAY *display, ALLEGRO_TIMER *timer, ALLEGRO_TIMER *tcont);
 
+//Efeitos de transição
+void fadeout(int velocidade, int largura, int altura, ALLEGRO_DISPLAY *display);
+void fadein(int velocidade, ALLEGRO_BITMAP *imagem);
+
 #endif
